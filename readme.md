@@ -8,4 +8,4 @@
 <br/>[WIP pt 1 Sampler Particles](https://charles-ly.github.io/AtotheK/Sound_on_keypress_UPDATED_PARTICLES_PT_2/index.html)
 <br/>[WIP pt 2 Sampler Bounce Sounds](https://charles-ly.github.io/AtotheK/Sound_on_keypress_UPDATED_PARTICLES_PT_3_WITH_SOUND_BOUNCE/index.html)
 <br/>[WIP pt 3 Sampler Smoke](https://charles-ly.github.io/AtotheK/Sound_on_keypress_UPDATED_PARTICLES_PT_3_WITH_IMAGE_TEXTURE/index.html)
-<br/>[Arcanyx Type Sampler](https://charles-ly.github.io/AtotheK/Arcanyx_Type_Sampler/index.html)
+<br/>[Arcanyx Type Sampler](https://charles-ly.github.io/AtotheK/Arcanyx_Type_Sampler)
