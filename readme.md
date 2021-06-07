@@ -1,5 +1,5 @@
-# Hello World
-## today is a rainy day
+# AtotheK  
+## WIPS and Sampler
 
 <br/>[paragraph with load time](https://charles-ly.github.io/AtotheK/sketch_load_paragraph_time/index.html)
 <br/><a href="https://charles-ly.github.io/AtotheK/sketch_load_paragraph_time/index.html">using html markup</a>
@@ -12,3 +12,9 @@
 <br/>[WIP pt 4 Cursor Trail (Not Working as intended)](https://charles-ly.github.io/AtotheK/Sound_on_keypress_PT_4_Cursor/index.html)
 
 <br/>[Arcanyx Type Sampler](https://charles-ly.github.io/AtotheK/Arcanyx_Type_Sampler/index.html)
+
+<br/>[Arcanyx Type Sampler](https://charles-ly.github.io/AtotheK/hero)
+
+![Hero Image](https://github.com/charles-ly/AtotheK/blob/main/Hero%20Image.jpg?raw=true)
+
+![Bayonetta Application](https://github.com/charles-ly/AtotheK/blob/main/Bayonetta%20application.jpg?raw=true)
