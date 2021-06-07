@@ -1,8 +1,10 @@
-//Thanks to Karen ann Donnachie and The Coding Train 
+//Thanks to Karen ann Donnachie and The Coding Train for coding tutorials and snippets of code!
+//Karen helped display the text and play sound
+//The Coding Train helped with particle systems (particle, stars, cloud, emitter)
 //Requires p5.sound v.1.0.1
 //Requires cloud.png image file
 //Requires Arcanyx.otf font file
-//Soundfx file from https://www.youtube.com/watch?v=bGNY2YOSSqw by ICETREYs FX 
+//Requires Poof_sound_FX.mp3 soundfx file, retrieved from https://www.youtube.com/watch?v=bGNY2YOSSqw by ICETREYs FX - 
 
 //TEXT parameters
 let firstLetter=65; //the first coded glyph (as unicode number)
@@ -24,7 +26,6 @@ function preload() {
   soundfx = loadSound('data/Poof_sound_FX.mp3');
 }
 
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
@@ -45,7 +46,6 @@ function setup() {
   
 //CLOUDS
   emitter = new Emitter(200, 375);
-  
 }
 
 function draw() {
@@ -58,23 +58,20 @@ function draw() {
   text(letter, width/2, height/2); //Places text in the middle of the screen
   
 //CLOUDS
-  emitter.show();
-  emitter.update();
+  emitter.show(); //Calling appearance of clouds
+  emitter.update(); //Calling animation and movement of clouds
  
   blendMode(ADD); //Allows for different visual effects when objects overlap. ADD allows for the white glow (Most noticeable with the smoke) 
 
-  //CLOUDS dissipate towards the direction of the cursor
+//CLOUDS dissipate towards the direction of the cursor
   let force = createVector(0, -0.1); // (x, y) determines the direction of movement; y= -0.1 creates a soft upward force
   emitter.applyForce(force);
 
   let dir = map(mouseX, 0, width, -0.1, 0.1); //Determines the x direction of cloud movement according to cursor placement.
-  let wind = createVector(dir, 0);
+  let wind = createVector(dir, 0); //Adds a 'wind' force, gives direction of movement
   emitter.applyForce(wind);
-
   
-  
-  
-  //PARTICLES
+//PARTICLES
   for (let particle of particles) {
     let gravity = createVector(0, 0.2); //Controls strength of gravity (Only y value added here for downward movement)
     particle.applyForce(gravity); //Adds downward motion to particles
@@ -89,10 +86,7 @@ function draw() {
       particles.splice(i, 1);
     }
   }
-  
-
 }
-
 
 //touchStarted used instead to account for viewership on phones
 function touchStarted() {
@@ -117,6 +111,8 @@ function touchStarted() {
   for (let i = 0; i < 9; i++) {
     particles.push(new Stars(width/2, height/2));//Creates a STAR and determines initial placement of particles (x,y)
   }
+
+//CLOUDS
   emitter.emit(10);
 }
 
@@ -128,16 +124,13 @@ function keyTyped(){
   
   userStartAudio();
   letter = unchar(key);
-  osc.start();
+  osc.start(); //Plays sound
   freq = midiToFreq(letter-30); //the math here adjusts the scale -30 (lowers frequency of sound)
   osc.freq(freq);
-  env.ramp(osc, 0, 1.0, 0);
+  env.ramp(osc, 0, 1.0, 0); //Adjust numbers to control ([unit], delay, volume start, end volume)
   
   soundfx.play(); //triggers sfx to play
   
-  if (key == ' '){
-  saveCanvas(letter, 'jpg');
-  }
   letter=key;
   
   //PARTICLES
@@ -149,10 +142,12 @@ function keyTyped(){
   for (let i = 0; i < 9; i++) {
     particles.push(new Stars(width/2, height/2));
   }
+  
+  //CLOUDS
   emitter.emit(10);
 }
 
-
+//Allows for functionality when window is resized, scales content proportionally
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
   fontsize= windowHeight/3;
