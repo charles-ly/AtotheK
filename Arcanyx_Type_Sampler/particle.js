@@ -12,7 +12,7 @@ class Particle { //Creates and names a class (Particle) and acts as a template
   finished() {
     return this.lifetime < 0;
   }
-
+  //For direction of movement
   applyForce(force) {
     this.acc.add(force);
   }
@@ -23,17 +23,17 @@ class Particle { //Creates and names a class (Particle) and acts as a template
       
       //bouncing off sound effect
       userStartAudio();
-      osc.start();
+      osc.start(); //Plays sound
       freq = midiToFreq(random(50,53)); //the math here adjusts the scale -30 (lowers frequency of sound)
       osc.freq(freq);
       env.ramp(osc, 0, 0.1, 0); //Adjust numbers to control ([unit], delay, volume start, end volume)
       
       
       this.pos.y = height - this.r;
-      //bouncing force
+      //Bouncing force (Reverses direction)
       this.vel.y *= -0.2;
     }
-
+    //For bouncing off of sides
     if (this.pos.x >= width - this.r) {
       this.pos.x = width - this.r;
       this.vel.x *= -1;
@@ -43,20 +43,22 @@ class Particle { //Creates and names a class (Particle) and acts as a template
     }
   }
 
+//Animation and direction
   update() {
     this.vel.add(this.acc);
     this.pos.add(this.vel);
     this.acc.set(0, 0);
 
-    //larger number = shorter lifespan
+    //Lowers opacity by x (larger number = shorter lifespan)
     this.lifetime -= 3;
   }
 
+//Appearance
   show() {
-    stroke(255, this.lifetime);
-    strokeWeight(2);
-    fill(250, this.lifetime);
+    stroke(255, this.lifetime); //Outline and fade
+    strokeWeight(2); //Outline thickness
+    fill(250, this.lifetime);//Colour and fade
 
-    ellipse(this.pos.x, this.pos.y, this.r * 2);
+    ellipse(this.pos.x, this.pos.y, this.r * 2);//Draw circle (x,y,diameter)
   }
 }
