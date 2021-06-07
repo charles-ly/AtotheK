@@ -13,8 +13,6 @@
 
 <br/>[Arcanyx Type Sampler](https://charles-ly.github.io/AtotheK/Arcanyx_Type_Sampler/index.html)
 
-<br/>[Arcanyx Type Sampler](https://charles-ly.github.io/AtotheK/hero)
-
 ![Hero Image](https://github.com/charles-ly/AtotheK/blob/main/Hero%20Image.jpg?raw=true)
 
 ![Bayonetta Application](https://github.com/charles-ly/AtotheK/blob/main/Bayonetta%20application.jpg?raw=true)
